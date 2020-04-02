@@ -37,10 +37,26 @@ void get_int(int * INT, char * CHR)
 	std::cout << sizeof(*INT) << std::endl;
 	std::cout << *CHR << std::endl;
 	std::cout << get_pi() << std::endl;
+
+
+	unsigned char myChar = 'A';
+	myTarget = &myChar;
+	std::cout << *myTarget << std::endl;
+
+	Suit Card = Suit::Diamonds;
+	PlayCard(Card);
+
 }
 
 double get_pi(const double pi)
 {
 	/* we only return const double pi number here */
 	return pi;
+}
+
+void PlayCard(Suit suit)
+{
+	if (suit == Suit::Diamonds) {
+		std::cout << "Suit has entered a Function and got working with Value " << Suit::Diamonds << std::endl;
+	}
 }
