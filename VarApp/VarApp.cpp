@@ -34,6 +34,7 @@ void show_box(box Box)
 	MessageBox(nullptr, Box.text, Box.caption, MB_OK);
 }
 
+
 int main()
 {
 	int j = 1;
@@ -72,11 +73,34 @@ void get_int(int * INT, char * CHR)
 	int Num10 = static_cast<int>(Suit::Diamonds);
 	PlayCard(Card, Num10);
 
-	login f_User;
-	f_User.username = "Testuser";
-	f_User.password = "TopSecret";
-	try_login(f_User);
+	/* after struct and assign we make a pointer here */
+	login* l_User = &g_User;
+	l_User->username = "Testuser";
+	l_User->password = "TopSecret";
 
+	std::string l_test1;
+	std::string* l_test2 = &l_test1;
+	*l_test2 = "Polaroid";
+	std::cout << l_test1 << std::endl;
+
+	// bool result = try_login(l_User);
+	// bool r;
+	/* we see it is readable and in one line */
+	/* in same we declare result as bool and take return from try_login(*g_User) into it */
+	/* now submit with pointer */
+	switch (bool l_result = try_login(*l_User))
+	{
+		case true:
+			std::cout << "Login works" << std::endl;
+			break;
+		case false:
+			std::cout << "Login wrong" << std::endl;
+			break;
+		default:
+			std::cout << "Login wrong" << std::endl;
+			break;
+	}
+	
 }
 
 double get_pi(const double pi)
@@ -85,18 +109,24 @@ double get_pi(const double pi)
 	return pi;
 }
 
-void try_login(login Login)
+bool try_login(login Login)
 {
 	// printf(Login.username);
 	// printf(Login.password);
-	std::string st_r = "GoGo Girls";
-	std::cout << st_r << std::endl;
+	if (Login.username == "Testuser" && Login.password == "TopSecret")
+	{
+		return true;
+	}
+	else {
+
+		return false;
+	}
 }
 
 void PlayCard(Suit suit, int Zahl1)
 {
 	if (suit == Suit::Diamonds) {
-		std::cout << "Suit has entered a Function and got working with Value " << Suit::Diamonds << std::endl;
+		std::cout << "Suit has entered a Function and got working with Value " << suit << std::endl;
 		std::cout << "int Var Zahl1 has also reached Fuction with Value " << Zahl1 << " it works" << std::endl;
 	}
 }
