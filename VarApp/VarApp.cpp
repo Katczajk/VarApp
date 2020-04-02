@@ -3,18 +3,44 @@
 
 #include <iostream>
 
+#ifndef VARAPP_H
+#define VARAPP_H
+
+#include "VarApp.h"
+
+#endif // !VARAPP_H
+
+const int INTMAX = INT_MAX;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	int j = 1;
+	short i = 2;
+	long h = 3;
+	long long k = 4;
+	float l = 5;
+	double m = 6;
+	long double n = 7;
+	char c = 'A';
+	const int* Number = &j;
+
+	// std::cout << *Number << std::endl;
+	get_int(&j,&c);
+
+	getchar();
 }
 
-// Programm ausführen: STRG+F5 oder "Debuggen" > Menü "Ohne Debuggen starten"
-// Programm debuggen: F5 oder "Debuggen" > Menü "Debuggen starten"
+/* put something out and try something */
+void get_int(int * INT, char * CHR)
+{
+	std::cout << *INT << std::endl;
+	std::cout << sizeof(*INT) << std::endl;
+	std::cout << *CHR << std::endl;
+	std::cout << get_pi() << std::endl;
+}
 
-// Tipps für den Einstieg: 
-//   1. Verwenden Sie das Projektmappen-Explorer-Fenster zum Hinzufügen/Verwalten von Dateien.
-//   2. Verwenden Sie das Team Explorer-Fenster zum Herstellen einer Verbindung mit der Quellcodeverwaltung.
-//   3. Verwenden Sie das Ausgabefenster, um die Buildausgabe und andere Nachrichten anzuzeigen.
-//   4. Verwenden Sie das Fenster "Fehlerliste", um Fehler anzuzeigen.
-//   5. Wechseln Sie zu "Projekt" > "Neues Element hinzufügen", um neue Codedateien zu erstellen, bzw. zu "Projekt" > "Vorhandenes Element hinzufügen", um dem Projekt vorhandene Codedateien hinzuzufügen.
-//   6. Um dieses Projekt später erneut zu öffnen, wechseln Sie zu "Datei" > "Öffnen" > "Projekt", und wählen Sie die SLN-Datei aus.
+double get_pi(const double pi)
+{
+	/* we only return const double pi number here */
+	return pi;
+}
