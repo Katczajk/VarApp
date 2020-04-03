@@ -6,4 +6,12 @@
 #endif // !Function_H
 
 
+float myfunction::getVersion()
+{
 
+	std::cout << "Version 1.20" << std::endl;
+	getchar();
+
+
+	return 1.20;
+}

@@ -6,3 +6,13 @@
 #include <Windows.h>
 
 
+class myfunction
+{
+public:
+	
+	static float getVersion();
+
+private:
+
+};
+

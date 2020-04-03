@@ -11,7 +11,6 @@
 #define VARAPP_H
 
 #include "VarApp.h"
-#include "Function.h"
 
 #endif // !VARAPP_H
 
@@ -20,5 +19,6 @@
 int main()
 {
 	
+	std::cout << "Version " << myfunction::getVersion() << std::endl;
+		
 }
-
