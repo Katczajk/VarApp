@@ -18,9 +18,15 @@
     <ClCompile Include="VarApp.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VarApp.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
